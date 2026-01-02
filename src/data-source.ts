@@ -16,6 +16,6 @@ export const AppDataSource = new DataSource({
   database: process.env.DB_NAME,
   entities: [Spotify_User, TrackStat, RecentlyPlayed],
   migrations: ['src/migrations/*{.ts,.js}'],
-  synchronize: process.env.NODE_ENV !== 'development',
+  synchronize: true,
   logging: true,
 });
