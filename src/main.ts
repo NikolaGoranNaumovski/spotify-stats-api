@@ -5,7 +5,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({
-    origin: ['http://localhost:5173', 'https://my-frontend.com'], // only allow these
+    origin: ['http://localhost:5173', 'https://spot-stats-client.vercel.app'], // only allow these
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true, // allow cookies
   });
