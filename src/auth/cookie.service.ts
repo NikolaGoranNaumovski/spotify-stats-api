@@ -8,7 +8,7 @@ export class CookieService {
   setCookie(res: Response, token: string) {
     res.cookie('jwt', token, {
       httpOnly: true,
-      sameSite: 'lax',
+      sameSite: 'none',
       maxAge: 60 * 60 * 1000,
       secure: process.env.NODE_ENV === 'production',
     });
