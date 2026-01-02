@@ -36,7 +36,7 @@ import { RecentlyPlayedModule } from './recently-played/recently-played.module';
           migrationsDir: 'src/migrations',
         },
         migrations: [__dirname + '/migrations/*{.ts,.js}'],
-        synchronize: true,
+        synchronize: configService.get<string>('NODE_ENV') === 'development',
       }),
     }),
 
