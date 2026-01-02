@@ -23,6 +23,10 @@ import { RecentlyPlayedModule } from './recently-played/recently-played.module';
       useFactory: (configService: ConfigService) => ({
         type: 'postgres',
         host: configService.get<string>('DB_HOST'),
+        ssl: {
+          rejectUnauthorized:
+            configService.get<string>('NODE_ENV') !== 'production',
+        },
         port: Number(configService.get<string>('DB_PORT')),
         username: configService.get<string>('DB_USERNAME'),
         password: configService.get<string>('DB_PASSWORD'),
